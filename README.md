@@ -67,11 +67,35 @@ Nimbus operates with a "Safety-First" policy.
 ---
 
 ## 🗺️ Developer Roadmap
+
+### 🟢 Phase 1: Foundation & Stability (Completed)
 - [x] Core Injector Architecture
 - [x] Cloud-Sync Script Hub Implementation
-- [ ] Multi-Process Support
-- [ ] Script Encryption/Obfuscation Module
-- [ ] User Settings & Config Persistence
+- [x] Obsidian/Slate UI Framework
+- [x] GDI+ Custom Rasterization
+
+### 🟡 Phase 2: Performance & Optimization (In Progress)
+- [ ] **Multi-Process Management:** Allow Nimbus to attach to multiple instances of the game engine simultaneously.
+- [ ] **Panic Protocol v2:** Advanced memory sanitization to prevent process flagging.
+- [ ] **Hot-Reloading:** Ability to reload scripts from the Hub without restarting the injection process.
+- [ ] **Resource Profiler:** Live monitoring of script CPU/Memory consumption to identify "heavy" scripts.
+
+### 🔵 Phase 3: Advanced UI & Scripting Tools
+- [ ] **Built-in Script Editor:** Integrated IDE within Nimbus featuring syntax highlighting and error checking.
+- [ ] **IntelliSense Integration:** Autocomplete support for common Roblox engine functions.
+- [ ] **Config Persistence:** Save user-defined settings, UI layout preferences, and keybinds to local `settings.json`.
+- [ ] **Script Metadata:** Add "Author," "Version," and "Description" fields to hub items for better organization.
+
+### 🟣 Phase 4: Enterprise Connectivity & Security
+- [ ] **Discord Rich Presence:** Real-time status integration showing script activity to friends.
+- [ ] **Cloud Profiles:** Sync user-specific script shortcuts and favorites to the cloud via OAuth.
+- [ ] **Auto-Updater Module:** Seamless delivery of hotfixes and engine compatibility patches.
+- [ ] **Obfuscated Injection:** Advanced binary protection to ensure the integrity of the injector during runtime.
+- [ ] **Log Analytics:** Automated report generation for crash logs, helping us improve stability faster.
+
+### ⚪ Phase 5: Community & Ecosystem
+- [ ] **Public API Documentation:** Allow third-party developers to integrate their own modules into Nimbus.
+- [ ] **Community Plugin System:** Support for user-created UI themes and external utility plugins.
 
 ---
 
