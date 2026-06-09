@@ -28,9 +28,9 @@
 *   **Rendering:** GDI+ Custom Rasterization
 
 ## 📋 Quick Start
-1. **Download:** Get the latest release from the [Releases](https://github.com/nimbusx64/nimbus.roblox/releases) page.
+1. **Download:** Get the latest release [Releases](https://github.com/nimbusx64/nimbus.roblox/releases)
 2. **Setup:** Ensure all dependencies are in the same directory as the executable.
-3. **Inject:** Run Nimbus and click "Reattach" to hook into the active Roblox process.
+3. **Inject:** Run Nimbus to hook onto roblox and run any script as see fit.
 4. **Hub:** Use the "Hub" module to browse and execute community-maintained scripts.
 
 ## 📁 Repository Structure
@@ -39,5 +39,3 @@
 ├── /hub            # Cloud-sync script library
 │   ├── Category-Name.lua
 │   └── support.txt
-├── MainForm.cs     # Main dashboard logic
-└── HubForm.cs      # Script hub hierarchy logic
