@@ -1,2 +1,0 @@
-Basic Esp - basicesp.lua - General
-Dark Dex - darkdex.lua - Tools
