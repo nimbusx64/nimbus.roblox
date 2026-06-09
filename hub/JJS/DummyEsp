@@ -1,36 +1,44 @@
--- CONFIGURATION
-local isHighlightEnabled = true -- Change this to false to turn it off
-
--- SETUP
 local workspace = game:GetService("Workspace")
 
--- We look for the folder first, then the dummy inside it
+-- Setup paths
 local charactersFolder = workspace:WaitForChild("Characters")
 local dummy = charactersFolder:WaitForChild("Dummy")
 
-local function updateHighlight()
-    -- Look for an existing highlight inside the dummy
-    local existingHighlight = dummy:FindFirstChild("DummyHighlight")
+-- Names for our tracker and highlight
+local MARKER_NAME = "ToggleMarker"
+local HIGHLIGHT_NAME = "DummyHighlight"
 
-    if isHighlightEnabled then
-        -- Only create if it doesn't already exist
-        if not existingHighlight then
-            local highlight = Instance.new("Highlight")
-            highlight.Name = "DummyHighlight"
-            highlight.FillColor = Color3.fromRGB(255, 0, 0) -- Red
-            highlight.OutlineColor = Color3.fromRGB(255, 255, 255) -- White
-            highlight.FillTransparency = 0.5
-            highlight.OutlineTransparency = 0
-            highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
-            highlight.Parent = dummy
-        end
-    else
-        -- Remove the highlight if it exists
-        if existingHighlight then
-            existingHighlight:Destroy()
-        end
+-- Check if the marker already exists
+local existingMarker = dummy:FindFirstChild(MARKER_NAME)
+local existingHighlight = dummy:FindFirstChild(HIGHLIGHT_NAME)
+
+if existingMarker then
+    -- STATE: ON -> Turn it OFF
+    print("Toggle: Turning OFF")
+    
+    existingMarker:Destroy()
+    if existingHighlight then
+        existingHighlight:Destroy()
     end
+else
+    -- STATE: OFF -> Turn it ON
+    print("Toggle: Turning ON")
+    
+    -- 1. Create the Marker Part (The flag)
+    local marker = Instance.new("Part")
+    marker.Name = MARKER_NAME
+    marker.Transparency = 1 
+    marker.CanCollide = false 
+    marker.Size = Vector3.new(1, 1, 1)
+    marker.Parent = dummy
+    
+    -- 2. Create the Highlight
+    local highlight = Instance.new("Highlight")
+    highlight.Name = HIGHLIGHT_NAME
+    highlight.FillColor = Color3.fromRGB(255, 0, 0)
+    highlight.OutlineColor = Color3.fromRGB(255, 255, 255)
+    highlight.FillTransparency = 0.5
+    highlight.OutlineTransparency = 0
+    highlight.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
+    highlight.Parent = dummy
 end
-
--- Run the logic
-updateHighlight()
